@@ -11,7 +11,7 @@
 class Solution {
 public:
     ListNode* middleNode(ListNode* head) {
-     //EFFicient approach
+   /*  //EFFicient approach
       ListNode *normalspeed=head ,*doublespeed=head;
         
         while(doublespeed!=NULL&&doublespeed->next!=NULL){
@@ -19,6 +19,22 @@ public:
             doublespeed=doublespeed->next->next;
         }
         return normalspeed;
+        */
+      int n=0;
+        ListNode *temp=head;
+        while(temp!=NULL)
+        {  n++;
+            temp= temp->next;
+        }
+        
+        int half=n/2;
+        temp=head;
+        while(half--)
+        {
+            temp =temp->next;
+        }
+        
+        return temp;
         
         
         
