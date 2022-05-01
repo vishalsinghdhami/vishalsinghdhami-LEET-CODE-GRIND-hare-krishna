@@ -7,17 +7,16 @@ public:
         if(c == '('|| c == '{' || c == '['){
             st.push(c);
         }else{
-            if(st.size()==0) return false;
+            if(st.empty()) return false;
             if(c == ')' && st.top() != '(') return false;
             if(c == '}' && st.top() != '{') return false;
             if(c == ']' && st.top() != '[') return false;
             st.pop();
         }
     }
-    if(st.size()==0) return true;
-    else  
-        return false;
-}};/*
+    return st.empty();}
+
+};/*
 
 bool isValid(string s) {
         stack<char> st;  //taking stack for keep tracking the order of the brackets..
