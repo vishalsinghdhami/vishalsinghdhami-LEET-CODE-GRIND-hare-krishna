@@ -8,11 +8,11 @@
  *     ListNode(int x, ListNode *next) : val(x), next(next) {}
  * };
  */
-//                        RECURSIVE SOLUTION
+                 //       RECURSIVE SOLUTION
 class Solution {
 public:
-    ListNode* reverse(ListNode* head)
-    {   
+    //ListNode* reverse(ListNode* head)
+  /*  {   
         if(head->next==NULL)
         {
             return  head;
@@ -33,21 +33,29 @@ public:
     
 //Iterative solution    prev curr NEXT
                                                                          
-    /*{  if(head==NULL){ return NULL;} 
-       ListNode *prev=NULL ,*current=head ,*NEXT=head->next;
+    */
+    ListNode *reverseList(ListNode *head)
+            {  if(head==NULL){ return NULL;} 
+       ListNode *prev=NULL ,*current=head ,*forw=NULL;
         
-        while(current!=NULL ){
-          current->next=prev;
-            prev=current;
-            current=NEXT;
-                if(NEXT!=NULL){
-                    NEXT=NEXT->next;
-                }
-             }return prev;
-        
-  }
+             while(current!=NULL)
+             {forw= current->next;
+             
+             current->next=prev ;
+             
+             prev = current;
+             
+             current=forw;
+             }
+         return prev;
+             
+             
+             
+       
+       
+  }};
 
 
 
-*/
+
                                                                             
