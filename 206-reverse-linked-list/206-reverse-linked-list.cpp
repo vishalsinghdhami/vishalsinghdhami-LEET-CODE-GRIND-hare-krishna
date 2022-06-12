@@ -39,8 +39,9 @@ public:
        ListNode *prev=NULL ,*current=head ,*forw=NULL;
         
              while(current!=NULL)
-             {forw= current->next;
-             
+             {
+             forw= current->next;
+                               
              current->next=prev ;
              
              prev = current;
