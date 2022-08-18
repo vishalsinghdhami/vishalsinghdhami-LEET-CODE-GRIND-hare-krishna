@@ -1,30 +1,38 @@
-class Solution {
-public:
-     
-    
-    int fib(int n) {
+class Solution
+{
+    int dprecursive(int n, int db[])
+    {
+        if (n <= 1)
+        {
+            return db[n]=n;
+        }
+        if(db[n]!=-1){
+            return db[n];
+        }
         
-        if(n<=1)
+        int ans= dprecursive(n-1,db) +dprecursive(n-2,db);
+        
+        return db[n]=ans;
+    }
+    
+    
+    
+    int recursive(int n)
+    {
+        if (n <= 1)
         {
             return n;
         }
-        
-      
-        int v[31];
-        for(int i=0;i<31;i++){
-           v[i]=-1; 
-        }
-        if(v[n]!=-1)
-        {
-            
-            return v[n];
-        }
-            
-        v[n]=(fib(n-1)+fib(n-2));
-        return v[n];
-        
-        
+        int ans = recursive(n - 1) + recursive(n - 2);
+
+        return ans;
+    }
+
+    public: int fib(int n)
+    {
+        int db[n+1];
+        for(int i=0;i<=n;i++){db[i]=-1;}
+        return dprecursive(n, db);
+       	//   return  recursive (n);
     }
 };
-
-
