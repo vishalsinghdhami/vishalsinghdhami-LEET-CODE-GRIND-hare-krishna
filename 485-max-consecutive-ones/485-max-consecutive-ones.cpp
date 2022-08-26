@@ -16,8 +16,7 @@ public:
               
               i=j;j++;
           }
-         
-                else{
+            else{
                     
                     i++;j++;
                 }
