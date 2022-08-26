@@ -1,30 +1,40 @@
 class Solution {
 public:
- 
-    void reverse(vector<int>&arr, int left, int right){
+    void rotate(vector<int>& arr, int k) {
+       int  n=arr.size();
+        k=k%n;
+        int i=0,j=arr.size()-1;
+        while(i<j)
+        {
+            swap(arr[i],arr[j]);
+            i++;j--;
+        }
+        
+         int p=0,q=k-1;
+        while(p<q)
+        {
+            swap(arr[p],arr[q]);
+            p++;q--;
+        }
+         int v=k,s=arr.size()-1;
+        while(v<s)
+        {
+            swap(arr[v],arr[s]);
+            v++;s--;
+        }
+//           //REVERSING the complete array !!
+//     for(int i=0;i<n/2;i++) swap(arr[i],arr[n-i-1]);
     
-    while(left < right){
-        int temp = arr[left];
-        arr[left] = arr[right];
-        arr[right] = temp;
-        left++;
-        right--;
+//     //Reversing first k elements !!
+//     for(int i=0;i<k/2;i++) swap(arr[i],arr[k-i-1]);
+     
+//     //Reversing next n-k elements
+//     for(int i=k;i<k+(n-k)/2;i++) swap(arr[i],arr[n+k-i-1]); 
+        
+        
+    
+        
+       
+        
     }
-}
-
-void rotate(vector<int>&nums, int k){
-  
-   int n;
-    n=nums.size();
-        k = k % n;
-    if(k < 0){
-        k += n;
-    }
-    reverse(nums,0,n - 1);
-    reverse(nums,0 , k - 1);
-    reverse(nums,k ,n - 1);
-    
-}
-    
-
 };
