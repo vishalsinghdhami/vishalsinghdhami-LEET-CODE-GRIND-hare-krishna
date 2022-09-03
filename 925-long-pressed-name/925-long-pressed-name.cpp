@@ -4,9 +4,9 @@ public:
     while (j < typed.size()) 
     {
         if (i < name.size() && name[i] == typed[j])
-        {++i, ++j;}
+        {i++, j++;}
         else if (i > 0 && name[i - 1] == typed[j])
-        {++j;}
+        {j++;}
         else return false;
     }
     return i == name.size();
