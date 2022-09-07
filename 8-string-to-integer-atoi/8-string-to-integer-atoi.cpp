@@ -8,11 +8,11 @@ public:
     while(i<n && s[i]==' '){
         i++;
     }
-    if(i<n && s[i]=='+'){
+    if(s[i]=='+'){
         sign=1;
         i++;
     }
-    else if(i<n && s[i]=='-'){
+    else if(s[i]=='-'){
         sign=-1;
         i++;
     }
