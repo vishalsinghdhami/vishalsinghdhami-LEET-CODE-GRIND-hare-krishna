@@ -3,13 +3,17 @@ public:
     int search(vector<int>& arr, int target) {
         //RECURSIVE
         
+        
+        //ITERATIVE
+        
+        
         int n=arr.size();
         
         int low=0;
         int high=n-1;
         int mid=(low+high)/2;
         
-        while(high-low>1)
+        while(low<mid&&high>mid)
         {
            if(arr[mid]>=target)
            {
@@ -46,10 +50,6 @@ public:
         else{
             return -1;
         }
-        
-        
-        
-        //ITERATIVE
         
         
         
