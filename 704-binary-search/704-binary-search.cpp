@@ -1,7 +1,7 @@
 class Solution {
 
     //RECURSIVE
-     int binarysearch(vector<int> arr,int low,int high,int target)
+     int binarysearch(vector<int>& arr,int low,int high,int target)
         {
           if(low>high)
           {
