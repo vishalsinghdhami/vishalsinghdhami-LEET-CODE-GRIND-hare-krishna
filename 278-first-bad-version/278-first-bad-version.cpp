@@ -7,7 +7,7 @@ public:
     {
         int low=1;
         int high= n;
-        vector<int>v;
+        //vector<int>v;
         
         while(low<=high)
         {
@@ -15,8 +15,13 @@ public:
             
             if(isBadVersion(mid))
             {
-                v.push_back(mid);
-                high=mid-1;
+                if (mid == 1 || !isBadVersion(mid - 1))
+                {
+                    return mid;
+                }
+                
+               // v.push_back(mid);
+              else{  high=mid-1;}
             }
             else{
                 low=mid+1;
@@ -24,9 +29,9 @@ public:
             
         }
         
-        return *min_element(v.begin(), v.end());
+        //return *min_element(v.begin(), v.end());
+        return 0;
         
-        
-        
-    }
+    }    
+    
 };
