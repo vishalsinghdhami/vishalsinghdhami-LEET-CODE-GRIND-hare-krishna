@@ -10,10 +10,10 @@ class Solution
     public:
     //Function to reverse words in a given string.
     string reverseWords(string s) 
-    { 
+    { //1 reverse complete string;
          reverse(s.begin(),s.end());
         
-        //4//reverse individual words  
+        //2//reverse individual words  
         int left = 0;int i;
         for(i=1;i<s.size();i++)
         {   
