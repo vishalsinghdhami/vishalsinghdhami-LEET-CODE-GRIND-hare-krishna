@@ -10,7 +10,7 @@ public:
 
         while(fast->next!=NULL)
         {
-            if(fast->next->next==NULL)
+            if(fast->next->next==NULL)//taking care of even no of nodes
             {   prev=slow;
                 slow=slow->next;
                 break;
