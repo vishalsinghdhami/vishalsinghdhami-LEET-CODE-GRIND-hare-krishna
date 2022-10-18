@@ -1,43 +1,20 @@
- /**
- * Definition for singly-linked list.
- * struct ListNode {
- *     int val;
- *     ListNode *next;
- *     ListNode() : val(0), next(nullptr) {}
- *     ListNode(int x) : val(x), next(nullptr) {}
- *     ListNode(int x, ListNode *next) : val(x), next(next) {}
- * };
- */
-                 //       RECURSIVE SOLUTION
+//Iterative solution    prev curr NEXT
+//element ko piche jodne sae paehle aage ka address  store rkho
 class Solution {
 public:
-    
-//Iterative solution    prev curr NEXT
-                                                                         
-    
-    ListNode *reverseList(ListNode *head)
-            {  if(head==NULL){ return NULL;} 
-       ListNode *prev=NULL ,*current=head ,*forw=NULL;
+    ListNode* reverseList(ListNode* head) 
+    {  if(head==NULL){return head;}
+         ListNode* prev=NULL;
+         ListNode* curr=head;
+         ListNode* forw=head;
         
-             while(current!=NULL)
-             {
-             forw= current->next;
-                               
-             current->next=prev ;
-             
-             prev = current;
-             
-             current=forw;
-             }
-         return prev;
-             
-             
-             
-       
-       
-  }};
-
-
-
-
-                                                                            
+     while(forw!=NULL)
+     {
+         forw=curr->next;
+         curr->next=prev;
+         prev=curr;
+         curr=forw;
+     }
+        return prev;   
+    }
+};
