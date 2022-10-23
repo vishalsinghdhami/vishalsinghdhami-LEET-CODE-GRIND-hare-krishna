@@ -17,11 +17,11 @@ public:
         
         for(auto x:m)
         {
-            if(x.second==3){v.push_back(x.first);}
+            if(x.second==3){v.push_back(x.first);break;}
         }
           for(auto x:m)
         {
-            if(x.second==1){v.push_back(x.first);}
+            if(x.second==1){v.push_back(x.first);break;}
         }
         
         return v;
