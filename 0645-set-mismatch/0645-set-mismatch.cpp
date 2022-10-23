@@ -1,29 +1,17 @@
 class Solution {
 public:
-    vector<int> findErrorNums(vector<int>& nums) {
-    vector<int>v;int p=1;
-    unordered_map<int,int>m;int n=nums.size();
-    for(int i=0;i<nums.size();i++)
-    {
-        m[nums[i]]++;
-      
-    }
-         for(int i=1;i<=nums.size();i++)
-    {
-        m[i]++;
+vector<int> findErrorNums(vector<int>& nums) {
+        vector<int> result(2, -1); 
+        for(int i=0; i<nums.size(); ++i){
+            while(nums[i] != i+1){
+                if(nums[i] == nums[nums[i]-1]){
+                    result[0] = nums[i];
+                    result[1] = i+1; 
+                    break; 
+                }else      
+                    swap(nums[i], nums[nums[i]-1]); 
+            }
+        }
+        return result; }
     
-    }
-      
-        
-        for(auto x:m)
-        {
-            if(x.second==3){v.push_back(x.first);break;}
-        }
-          for(auto x:m)
-        {
-            if(x.second==1){v.push_back(x.first);break;}
-        }
-        
-        return v;
-    }
 };
