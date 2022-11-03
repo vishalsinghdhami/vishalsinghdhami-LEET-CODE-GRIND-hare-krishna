@@ -27,19 +27,20 @@ public:
          else
          {
              string str = x.first;
-             reverse(str.begin(),str.end());
-             if(mp.find(str)!=mp.end())
+             string revstr=x.first;
+             reverse(revstr.begin(),revstr.end());
+             if(mp.find(revstr)!=mp.end())
              {
-                 ans+=min(mp[str],x.second)*4;
+                 ans+=min(mp[revstr],x.second)*4;
              }
+             mp.erase(revstr);
              mp.erase(str);
-             mp.erase(x.first);
          }
      }
         if(flag)
          {
-           return ans+len*2+2;  
+           return ans+ (len*2+2);  
          }
-         return ans+len*2;
+         return ans+(len*2);
     }
 };
