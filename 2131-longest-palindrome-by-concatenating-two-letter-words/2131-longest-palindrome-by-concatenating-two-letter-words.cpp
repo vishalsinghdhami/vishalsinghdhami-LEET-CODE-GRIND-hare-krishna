@@ -2,8 +2,8 @@ class Solution {
 public:
     int longestPalindrome(vector<string>& words) {
      map<string,int>mp;
-     int len = 0;
-     int ans = 0;
+     int len = 0;//for nontwins
+     int ans = 0;//for twins
      bool flag = false;
      for(auto word : words)
      {
@@ -11,7 +11,7 @@ public:
      }
      for(auto x : mp)
      {
-         if(x.first[0] == x.first[1])
+         if(x.first[0] == x.first[1])//twins check
          {
              if(x.second % 2 == 1)
              {
@@ -20,7 +20,7 @@ public:
              }
              else
              {
-                 len+=mp[x.first];
+                 len+=x.second;
              }
               mp.erase(x.first);
          }
