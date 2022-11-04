@@ -6,23 +6,26 @@ public:
         {return false;}
         }
     string reverseVowels(string s) {
-int start = 0;
-        int end  = s.size() - 1;
+int i = 0;
+        int j  = s.size() - 1;
         
         // While we still have characters to traverse
-        while (start < end) {
-            // Find the leftmost vowel
-            while (start < s.size() && !isVowel(s[start])) {
-                start++;
-            }
-            // Find the rightmost vowel
-            while (end >= 0 && !isVowel(s[end])) {
-                end--;
-            }
-            // Swap them if start is left of end
-            if (start < end) {
-                swap(s[start++], s[end--]);
-            }
+        while (i < j) {
+         
+            if(isVowel(s[i])&&isVowel(s[j]))
+               {
+                 swap(s[i],s[j]);
+                i++;j--;
+               }
+            else if(!isVowel(s[i]))
+               {
+                   i++;
+               }
+               else if(!isVowel(s[j]))
+               {
+                   j--;
+               }
+            
         }
         
         return s;
