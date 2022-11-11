@@ -5,7 +5,8 @@ public:
         if(n==0) return "";
         
         string ans  = "";
-       //hint :  agr string sort krdi tou sbe chto string aaegi aur sbsi bdi sbse piche tou esliye 1st ko last mae jo common hoga offcourse bich vli mae bhi common hoga
+        //hint : saaro mae sae common chaiye
+        //agr string sort krdi tou sbe chto string aaegi aur sbsi bdi sbse piche tou esliye 1st ko last mae jo common hoga offcourse bich vli mae bhi common hoga
         sort(str.begin(),str.end());
         
         string a = str[0];
