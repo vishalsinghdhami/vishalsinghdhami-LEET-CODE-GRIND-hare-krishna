@@ -1,25 +1,29 @@
-class Solution {
-public:
-    string removeOuterParentheses(string s) {
-        //through stack
-        stack<char>stk;
-    int n = s.size(), i=0;
-        string str,temp;
-        while(i<n){
-            char ch = s[i++];
-            if(ch=='('){
-                stk.push(ch);
-                temp.push_back(ch);
-            }else{
-                stk.pop();
-                temp.push_back(ch);
+class Solution
+{
+    public:
+        string removeOuterParentheses(string s)
+        {
+            stack<char> stck;
+            string ans;
+            for (char i: s)
+            {
+                if (i == '(')
+                {
+                    if (stck.size() > 0)
+                    {
+                        ans += i;
+                    }
+                    stck.push(i);
+                }
+                else
+                {
+                    if (stck.size() > 1)
+                    {
+                        ans += i;
+                    }
+                    stck.pop();
+                }
             }
-            if(stk.empty()){
-                str+=temp.substr(1,temp.size()-2);
-                temp="";
-            }
+            return ans;
         }
-        return str;
-    
-    }
 };
